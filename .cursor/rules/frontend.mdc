@@ -1,0 +1,39 @@
+---
+description: Frontend conventions for the React + Vite app
+globs: apps/frontend/**
+alwaysApply: false
+---
+
+# Frontend
+
+Stack: React, Vite, TypeScript in `apps/frontend`.
+
+## Structure
+
+- `components/` — shared UI only (Button, Card, Modal, VideoPlayer, Accordion)
+- `features/<domain>/` — courses, lessons, activities, admin
+- `layouts/` — `PublicLayout`, `AdminLayout`
+- `pages/` — public pages plus `/admin` pages
+- `hooks/` — reusable hooks
+- `lib/` — API client and admin token handling
+
+## Data and auth
+
+- All HTTP calls go through the API client in `src/lib`, using `VITE_API_BASE_URL`.
+- Admin JWT read/write lives only in `src/lib`. Components never touch the token directly.
+- Routes under `/admin` use `AdminLayout` and are guarded by the token check.
+- Quiz feedback comes only from `POST /api/activities/:id/check`. `GET /api/activities/:id` has no answers.
+- Never persist learner answers, scores, or progress. Do not use `localStorage` or `sessionStorage` for them.
+
+## Pages
+
+- Implement each page exactly as the supplied layout. Do not invent or restyle layouts.
+- Every data view has loading, empty, and error states.
+
+```tsx
+// Bad: fetch inside a component
+const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/courses`);
+
+// Good: use the shared client
+const courses = await api.get<Course[]>("/api/courses");
+```

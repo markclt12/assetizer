@@ -1,0 +1,25 @@
+.card {
+  --card-accent: var(--border);
+  --card-echo: transparent;
+  position: relative;
+  border: var(--stroke) solid var(--card-accent);
+  background: var(--surface);
+}
+
+.sketch {
+  border-radius: var(--radius-sketch);
+}
+
+.plain {
+  border-radius: var(--radius-md);
+}
+
+.echo::before {
+  content: "";
+  position: absolute;
+  inset: -8px 6px 6px -8px;
+  border: 1.5px solid var(--card-echo);
+  opacity: 0.55;
+  border-radius: var(--radius-sketch-alt);
+  pointer-events: none;
+}

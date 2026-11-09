@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// DATABASE_URL is the direct Neon connection (used by Prisma Migrate).
+// At runtime the app prefers DATABASE_URL_POOLED (see src/lib/prisma.ts).
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Admins only. There are no learner accounts.
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+// A category of assets, e.g. "Current ASSETizers" / "Non-current ASSETizers".
+model Course {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  description String
+  thumbnail   String?
+  isPublished Boolean   @default(false)
+  position    Int       @default(0)
+  sections    Section[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+// A topic inside a category, e.g. "CASHew". Powers Main Course (lessons),
+// Practice Bites (activity) and Specials (case study).
+model Section {
+  id           String     @id @default(cuid())
+  title        String
+  slug         String
+  illustration String? // decorative food image URL
+  position     Int
+  courseId     String
+  course       Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons      Lesson[]
+  activity     Activity?
+  caseStudy    CaseStudy?
+
+  @@unique([courseId, slug])
+  @@index([courseId, position])
+}
+
+model Lesson {
+  id        String     @id @default(cuid())
+  title     String
+  content   String // markdown
+  videoUrl  String? // URL from file storage, never the file itself
+  position  Int
+  sectionId String
+  section   Section    @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  resources Resource[]
+
+  @@index([sectionId, position])
+}
+
+// Downloadable files attached to a lesson or a case study (PDFs, spreadsheets, etc.)
+model Resource {
+  id          String     @id @default(cuid())
+  name        String
+  fileUrl     String
+  lessonId    String?
+  lesson      Lesson?    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  caseStudyId String?
+  caseStudy   CaseStudy? @relation(fields: [caseStudyId], references: [id], onDelete: Cascade)
+
+  @@index([lessonId])
+  @@index([caseStudyId])
+}
+
+model Activity {
+  id        String     @id @default(cuid())
+  title     String
+  sectionId String     @unique
+  section   Section    @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  questions Question[]
+}
+
+model Question {
+  id          String   @id @default(cuid())
+  prompt      String
+  options     String[]
+  correctIdx  Int
+  explanation String?
+  position    Int
+  activityId  String
+  activity    Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+
+  @@index([activityId, position])
+}
+
+// "Specials": one case study per topic.
+model CaseStudy {
+  id        String     @id @default(cuid())
+  title     String
+  content   String // markdown
+  sectionId String     @unique
+  section   Section    @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  resources Resource[]
+}
+
+// There are intentionally no tables for learners, enrollments, progress, or quiz attempts.

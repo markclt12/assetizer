@@ -1,0 +1,82 @@
+.headerRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.categoryTitle {
+  margin: 1.75rem 0 2rem;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+}
+
+.lessonTitle {
+  margin: 1rem 0 1.75rem;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--color-orange-strong);
+}
+
+.plainTitle {
+  margin: 0.5rem 0 1.75rem;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 46rem;
+  margin: 2rem auto 0;
+}
+
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.areaLink {
+  font-weight: 700;
+  color: var(--area-text, inherit);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.lessonBlock + .lessonBlock {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1.5px dashed color-mix(in srgb, var(--color-ink) 25%, transparent);
+}
+
+.lessonSubtitle {
+  font-size: 1.5rem;
+  color: var(--color-orange-strong);
+}
+
+.video {
+  margin-bottom: 2rem;
+}
+
+.nextCourses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: var(--stroke) solid var(--border);
+}
+
+.nextLabel {
+  flex-basis: 100%;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.contentFrame {
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  background: var(--surface);
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Nachos">
+  <circle cx="100" cy="104" r="86" fill="#141414"/>
+  <g stroke="#141414" stroke-width="4" stroke-linejoin="round">
+    <path d="M40 70 L 96 52 L 76 112 Z" fill="#EFC643"/>
+    <path d="M100 58 L 156 80 L 106 118 Z" fill="#EC6B3B"/>
+    <path d="M50 124 L 104 104 L 92 162 Z" fill="#EFC643"/>
+    <path d="M110 126 L 162 112 L 140 164 Z" fill="#EE917A"/>
+    <path d="M78 96 L 128 92 L 104 140 Z" fill="#EFC643"/>
+  </g>
+  <g fill="#E8474A">
+    <circle cx="96" cy="108" r="6"/>
+    <circle cx="66" cy="84" r="5"/>
+    <circle cx="128" cy="100" r="5"/>
+    <circle cx="82" cy="138" r="5"/>
+  </g>
+  <g fill="#9DAF6E">
+    <circle cx="110" cy="116" r="4"/>
+    <circle cx="140" cy="132" r="4"/>
+    <circle cx="74" cy="104" r="4"/>
+  </g>
+</svg>

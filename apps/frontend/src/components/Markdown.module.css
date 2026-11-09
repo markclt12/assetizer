@@ -1,0 +1,90 @@
+.markdown {
+  --md-accent: var(--color-orange);
+  --md-heading: var(--color-orange-strong);
+}
+
+.markdown h2 {
+  position: relative;
+  margin-top: 2rem;
+  padding-top: 0.85rem;
+  color: var(--md-heading);
+  font-size: 1.45rem;
+}
+
+/* Thick accent dash above headings, as in the lesson sketch */
+.markdown h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4.5rem;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--md-accent);
+}
+
+.markdown h3 {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+}
+
+.markdown h2:first-child {
+  margin-top: 0;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 1.25rem;
+}
+
+.markdown li::marker {
+  color: var(--md-accent);
+}
+
+/* Bullet lists flow into two columns, like the lesson sketch */
+@media (min-width: 760px) {
+  .columns ul {
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+
+  .columns li {
+    break-inside: avoid;
+  }
+}
+
+.markdown blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 5px solid var(--md-accent);
+  background: var(--surface-alt);
+}
+
+.markdown code {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--surface-alt);
+  font-size: 0.92em;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.markdown th,
+.markdown td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--color-ink) 25%, transparent);
+  text-align: left;
+}
+
+.markdown th {
+  background: var(--surface-alt);
+}

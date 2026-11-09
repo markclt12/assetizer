@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Dumplings">
+  <circle cx="100" cy="104" r="86" fill="#141414"/>
+  <g stroke="#141414" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="translate(66 92)">
+      <path d="M-40 14 Q -40 -30 0 -30 Q 40 -30 40 14 Q 0 26 -40 14 Z" fill="#EEE1CA"/>
+      <path d="M-24 -18 q 4 8 0 16 M-8 -26 q 4 10 0 20 M8 -26 q 4 10 0 20 M24 -18 q 4 8 0 16" fill="none"/>
+    </g>
+    <g transform="translate(132 104) rotate(12)">
+      <path d="M-36 12 Q -36 -26 0 -26 Q 36 -26 36 12 Q 0 22 -36 12 Z" fill="#F6C4AB"/>
+      <path d="M-20 -14 q 4 8 0 14 M-6 -22 q 4 8 0 18 M8 -22 q 4 8 0 18 M22 -14 q 4 8 0 14" fill="none"/>
+    </g>
+    <g transform="translate(92 146) rotate(-6) scale(0.9)">
+      <path d="M-36 12 Q -36 -26 0 -26 Q 36 -26 36 12 Q 0 22 -36 12 Z" fill="#EEE1CA"/>
+      <path d="M-20 -14 q 4 8 0 14 M-6 -22 q 4 8 0 18 M8 -22 q 4 8 0 18 M22 -14 q 4 8 0 14" fill="none"/>
+    </g>
+  </g>
+  <circle cx="150" cy="58" r="16" fill="#E8474A" stroke="#141414" stroke-width="4"/>
+</svg>

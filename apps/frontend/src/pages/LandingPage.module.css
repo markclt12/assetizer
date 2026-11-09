@@ -1,0 +1,37 @@
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 12rem);
+  padding-block: 2rem 4rem;
+}
+
+/* The ink "plate" the wordmark sits on */
+.plate {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  padding: clamp(2.5rem, 8vw, 5.5rem) clamp(1.25rem, 5vw, 4rem);
+  background: var(--surface-plate);
+  color: var(--text-on-plate);
+  border-radius: var(--radius-sketch);
+  box-shadow: var(--shadow-plate);
+  text-align: center;
+}
+
+.tagline {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.plate .cta {
+  margin-top: 0.5rem;
+  color: var(--color-sage);
+  border-width: 3px;
+}
+
+.plate .cta:hover {
+  background: color-mix(in srgb, var(--color-sage) 22%, transparent);
+}

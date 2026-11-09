@@ -1,0 +1,37 @@
+---
+description: Checklist and Conventional Commits format to follow when creating a git commit
+alwaysApply: false
+---
+
+# Committing
+
+Follow this only when the user asked for a commit. Do not push unless asked. Do not use `--no-verify`, `--amend`, or force-push unless the user explicitly asked.
+
+## Before committing
+
+- Stage only files that belong in this change.
+- Never stage `.env`, `.env.*` (except `.env.example`), credentials, or secrets.
+- If setup, scripts, env vars, folder structure, or features changed, `README.md` is part of the commit. A new or renamed env var is also reflected in `.env.example`.
+- If a route in `apps/api` was added, removed, or changed, `docs/API.md` is part of the commit.
+- When those docs are stale, update them first, then commit.
+
+## Message
+
+Conventional Commits. Subject line only, unless a short body is needed.
+
+```
+<type>(<scope>): <why, imperative, lowercase>
+
+<optional body: what was wrong or what this unlocks>
+```
+
+- **type**: `feat`, `fix`, `docs`, `refactor`, `test`, or `chore`.
+- **scope** is optional: `api`, `frontend`, `db`, or `docs`.
+- The subject states why, stays under 72 characters, and has no trailing period.
+- The body is one or two sentences when the subject is not enough. Do not list changed files.
+
+```
+feat(api): let admins reorder topics within a category
+fix(frontend): keep quiz feedback when the activity is retaken
+docs: record the signed upload response in the API reference
+```

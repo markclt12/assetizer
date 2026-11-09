@@ -1,0 +1,20 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.mark {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, var(--color-yellow) 0 30%, var(--color-ink) 31% 100%);
+  border: 2px solid var(--color-ink);
+}
+
+.text {
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,32 @@
+---
+description: Assetizers product structure, theme, and non-negotiable rules
+alwaysApply: true
+---
+
+# Assetizers project rules
+
+## Product structure
+
+- Learners never log in. Only admins authenticate (JWT).
+- Nothing about learners is stored: no accounts, progress, scores, or quiz attempts.
+- Data mapping:
+  - `Course` is a category (`current`, `non-current`).
+  - `Section` is a topic (for example CASHew).
+  - A topic powers three learner areas: its `Lesson`s (Main Course), its `Activity` (Practice Bites), and its `CaseStudy` (Specials).
+- Public routes: `/`, `/main-course`, `/practice-bites`, `/specials`, then `/:area/:category`, then `/:area/:category/:topic`.
+
+## Theme
+
+- Colors come only from the CSS variables in `apps/frontend/src/styles/theme.css` (sushi palette). Do not hard-code hex values in components.
+- Area accents:
+  - Main Course: sage
+  - Practice Bites: orange
+  - Specials: salmon
+- Category accents:
+  - Current: red
+  - Non-current: yellow
+- The landing `Logo` and `Wordmark` components are placeholders. Final typography and logo are supplied later; swap them there only.
+
+## Files
+
+- Videos and files live in external storage (Cloudinary or S3-compatible). The database stores URLs only.

@@ -1,0 +1,21 @@
+.section {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border: var(--stroke) dashed var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+}
+
+.heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.list a {
+  font-weight: 600;
+}

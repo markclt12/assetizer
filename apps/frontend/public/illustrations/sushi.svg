@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Sushi">
+  <circle cx="100" cy="104" r="86" fill="#141414"/>
+  <g stroke="#141414" stroke-width="4">
+    <circle cx="70" cy="74" r="24" fill="#E8474A"/>
+    <circle cx="66" cy="70" r="4" fill="#F6C4AB" stroke="none"/>
+    <circle cx="80" cy="80" r="3" fill="#F6C4AB" stroke="none"/>
+    <circle cx="130" cy="78" r="24" fill="#EDEDE7"/>
+    <circle cx="130" cy="78" r="13" fill="#9DAF6E"/>
+    <circle cx="66" cy="132" r="24" fill="#EFC643"/>
+    <circle cx="66" cy="132" r="8" fill="#EC6B3B"/>
+    <circle cx="128" cy="136" r="26" fill="#EC6B3B"/>
+    <path d="M110 128 q 18 -10 36 0 M108 142 q 20 -10 40 0" fill="none" stroke="#F6C4AB" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g stroke="#EEE1CA" stroke-width="5" stroke-linecap="round">
+    <path d="M150 28 L 186 112"/>
+    <path d="M140 32 L 178 116"/>
+  </g>
+</svg>

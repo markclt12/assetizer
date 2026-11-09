@@ -1,0 +1,4 @@
+.frame {
+  padding: clamp(1.25rem, 4vw, 3rem);
+  min-height: 60vh;
+}

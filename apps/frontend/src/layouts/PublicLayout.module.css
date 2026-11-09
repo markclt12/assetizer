@@ -1,0 +1,19 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.landing {
+  background: var(--surface-hero);
+}
+
+.main {
+  flex: 1;
+  padding-bottom: 3rem;
+}
+
+.footer {
+  padding-block: 1.5rem 2rem;
+  border-top: 1.5px dashed color-mix(in srgb, var(--color-ink) 30%, transparent);
+}

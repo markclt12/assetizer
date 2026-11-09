@@ -1,0 +1,16 @@
+.pill {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 3px solid var(--pill-accent);
+  border-radius: 60% 40% 55% 45% / 55% 45% 55% 45%;
+  color: var(--pill-text);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  transform: rotate(-2deg);
+}
+
+a.pill:hover {
+  background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+}

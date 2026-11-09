@@ -1,0 +1,33 @@
+---
+description: Keep README.md and docs/API.md in sync with the code
+alwaysApply: true
+---
+
+# README and API docs
+
+`README.md` is updated in the same change as the code it describes.
+
+Update `README.md` when a change affects any of these:
+
+- Setup steps, root scripts, or environment variables
+- Folder structure or features
+
+## API Reference
+
+[docs/API.md](docs/API.md) is the source of truth for the API. Every route in `apps/api` has an entry there. When a route is added, removed, or changed, update its entry in the same change. Keep the link to `docs/API.md` in `README.md`.
+
+Each entry uses this shape:
+
+```markdown
+### POST /api/activities/:id/check
+Access: Public
+Body: { "answers": [{ "questionId": "string", "selectedIdx": 0 }] }
+200: { "results": [{ "questionId": "string", "correct": true, "correctIdx": 0, "explanation": "string" }] }
+Errors: 400 invalid body, 404 activity not found
+```
+
+Include method, path, access (`Public` or `Admin`), request body when there is one, the success response shape, and error codes.
+
+## Environment variables
+
+When an env var is added or renamed, update both `.env.example` and the environment variable table in `README.md`.

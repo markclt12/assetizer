@@ -1,0 +1,67 @@
+/*
+ * Assetizers theme: the sushi palette.
+ * Hex values are approximated from the supplied palette image; adjust here only.
+ */
+:root {
+  /* Palette */
+  --color-red: #e8474a;
+  --color-orange: #ec6b3b;
+  --color-salmon: #ee917a;
+  --color-peach: #f6c4ab;
+  --color-yellow: #efc643;
+  --color-sage: #9daf6e;
+  --color-cream: #eee1ca;
+  --color-offwhite: #ededE7;
+  --color-ink: #141414;
+
+  /* Darker shades for text on light backgrounds (contrast) */
+  --color-red-strong: #c2282c;
+  --color-orange-strong: #c24c1d;
+  --color-salmon-strong: #b8543c;
+  --color-yellow-strong: #9a7a0f;
+  --color-sage-strong: #5f7134;
+
+  /* Semantic roles */
+  --surface: var(--color-offwhite);
+  --surface-alt: var(--color-cream);
+  --surface-hero: var(--color-peach);
+  --surface-plate: var(--color-ink);
+  --text: var(--color-ink);
+  --text-muted: #4a4540;
+  --text-on-plate: var(--color-offwhite);
+  --border: var(--color-ink);
+
+  /* Areas */
+  --area-main-course: var(--color-sage);
+  --area-main-course-text: var(--color-sage-strong);
+  --area-practice-bites: var(--color-orange);
+  --area-practice-bites-text: var(--color-orange-strong);
+  --area-specials: var(--color-salmon);
+  --area-specials-text: var(--color-salmon-strong);
+
+  /* Categories */
+  --category-current: var(--color-red);
+  --category-current-text: var(--color-red-strong);
+  --category-non-current: var(--color-yellow);
+  --category-non-current-text: var(--color-yellow-strong);
+
+  /* Feedback */
+  --feedback-correct: var(--color-sage);
+  --feedback-correct-text: var(--color-sage-strong);
+  --feedback-wrong: var(--color-red);
+  --feedback-wrong-text: var(--color-red-strong);
+
+  /* Typography (final landing typography is supplied later) */
+  --font-display: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Shape: slightly irregular "hand-drawn" corners, echoing the sketches */
+  --radius-sketch: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  --radius-sketch-alt: 18px 225px 18px 255px / 255px 18px 225px 18px;
+  --radius-pill: 999px;
+  --radius-md: 12px;
+  --stroke: 2.5px;
+
+  --shadow-plate: 0 18px 40px -18px rgb(20 20 20 / 0.45);
+  --content-width: 1120px;
+}

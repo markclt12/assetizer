@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cashews">
+  <defs>
+    <path id="nut" d="M-30 -30 C -52 0, -38 42, 2 44 C 28 45, 42 28, 33 15 C 25 4, 4 14, -4 2 C -12 -10, 0 -26, -12 -36 C -19 -42, -26 -38, -30 -30 Z"/>
+  </defs>
+  <circle cx="100" cy="104" r="86" fill="#141414"/>
+  <g stroke="#141414" stroke-width="4" stroke-linejoin="round">
+    <use href="#nut" transform="translate(72 82) rotate(-18)" fill="#EEE1CA"/>
+    <use href="#nut" transform="translate(128 92) rotate(40) scale(0.95)" fill="#F6C4AB"/>
+    <use href="#nut" transform="translate(96 138) rotate(-80) scale(0.9)" fill="#EFC643"/>
+  </g>
+  <g fill="none" stroke="#EE917A" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <path d="M62 70 q 6 -6 12 -2"/>
+    <path d="M124 82 q 6 2 8 8"/>
+  </g>
+</svg>

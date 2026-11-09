@@ -1,0 +1,37 @@
+.score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  border: var(--stroke) solid var(--area-practice-bites);
+  border-radius: var(--radius-sketch);
+  background: color-mix(in srgb, var(--area-practice-bites) 10%, var(--surface));
+  font-weight: 600;
+}
+
+.scoreValue {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--area-practice-bites-text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.progress {
+  color: var(--text-muted);
+}
+
+.error {
+  margin: 1rem 0 0;
+  color: var(--feedback-wrong-text);
+  font-weight: 600;
+}

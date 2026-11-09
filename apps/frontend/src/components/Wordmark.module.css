@@ -1,0 +1,20 @@
+.wordmark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.wordmark span {
+  display: inline-block;
+}
+
+.wordmark span:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.wordmark span:nth-child(even) {
+  transform: translateY(0.04em) rotate(2deg);
+}

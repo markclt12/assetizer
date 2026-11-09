@@ -1,0 +1,49 @@
+---
+description: Backend conventions for the Express + Prisma API
+globs: apps/api/**
+alwaysApply: false
+---
+
+# Backend
+
+Stack: Node.js, Express, TypeScript, Prisma, Neon PostgreSQL in `apps/api`.
+
+## Structure
+
+- `modules/<name>/` holds `routes`, `controller`, `service`, and validation schema for that domain (auth, courses, sections, lessons, activities, uploads).
+- One Prisma client singleton from `src/lib`. Do not call `new PrismaClient()` elsewhere.
+- Read environment variables only through the validated config in `src/config`.
+
+## Requests
+
+- `/api/admin/*` and `GET /api/auth/me` use the `requireAdmin` middleware.
+- Validate every request body with the `validate` middleware before the controller.
+- Throw errors to `errorHandler`. Responses use `{ "error": { "message": string, "code": string } }`.
+
+## Public data
+
+- Public routes return only published content (`isPublished: true`).
+- Never include `Question.correctIdx` in any response that delivers questions. It appears only in `POST /api/activities/:id/check` results.
+- `POST /api/activities/:id/check` is stateless. It performs no writes.
+
+```ts
+// Bad
+prisma.question.findMany({ where: { activityId } });
+
+// Good: omit the answer key on public reads
+prisma.question.findMany({
+  where: { activityId },
+  select: { id: true, prompt: true, options: true, position: true },
+});
+```
+
+## Data model
+
+- There are no learner, enrollment, progress, or quiz-attempt tables. Do not add them.
+- Files and videos are never stored in the database or on the Express server. Store only the external URL (`Lesson.videoUrl`, `Resource.fileUrl`).
+- Admin uploads use a signed upload. Validate file type and size before issuing the signature.
+
+## Migrations
+
+- Schema changes go through `npx prisma migrate dev --name <name>`.
+- When a change needs sample data, update `prisma/seed.ts` in the same change.

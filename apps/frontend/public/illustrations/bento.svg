@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bento box">
+  <rect x="22" y="38" width="156" height="128" rx="16" fill="#141414"/>
+  <g stroke="#EEE1CA" stroke-width="4">
+    <path d="M100 46 V 158 M100 102 H 170" fill="none"/>
+  </g>
+  <g stroke="#141414" stroke-width="3">
+    <circle cx="48" cy="72" r="14" fill="#EDEDE7"/>
+    <circle cx="76" cy="72" r="14" fill="#EDEDE7"/>
+    <circle cx="48" cy="102" r="14" fill="#EDEDE7"/>
+    <circle cx="76" cy="102" r="14" fill="#EDEDE7"/>
+    <circle cx="62" cy="134" r="16" fill="#E8474A"/>
+    <rect x="112" y="56" width="22" height="34" rx="6" fill="#EC6B3B"/>
+    <rect x="140" y="56" width="22" height="34" rx="6" fill="#EE917A"/>
+    <circle cx="124" cy="132" r="14" fill="#9DAF6E"/>
+    <circle cx="152" cy="132" r="14" fill="#EFC643"/>
+  </g>
+</svg>
